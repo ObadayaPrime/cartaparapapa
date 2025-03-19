@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¡Feliz Día del Padre!</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('pa.jpg');
+      background-size: auto;
+      color: white;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+    }
+    .container {
+      background: rgba(0, 0, 0, 0.6);
+      margin: 100px auto;
+      padding: 30px;
+      max-width: 600px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px #fff;
+    }
+    h1 {
+      color: #FFD700;
+    }
+    .carousel {
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+      margin: 20px auto;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .carousel img {
+      width: 100%;
+      display: none;
+    }
+    .carousel img.active {
+      display: block;
+    }
+    p {
+      font-size: 18px;
+    }
+    button {
+      background-color: #FFD700;
+      color: black;
+      padding: 10px 20px;
+      margin-top: 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #ffa500;
+    }
+  </style>
+</head>
+<body>
+
+  <audio id="music" autoplay loop>
+    <source src="Piero - Mi Viejo (Letra_Lyrics)  Es un buen tipo mi viejo - TED SAD.mp3" type="audio/mp3">
+  </audio>
+
+  <div class="container">
+    <h1>¡Feliz Día del Padre!</h1>
+    <div class="carousel">
+      <img src="pa3.jpg" alt="Imagen 1" class="active">
+      <img src="pa1.jpg" alt="Imagen 2">
+      <img src="pa2.jpg" alt="Imagen 3">
+    </div>
+    <p>
+      Querido papá,<br><br>
+      En este día tan especial, quiero agradecerte por todo lo que haces por mí. Eres mi guía, mi apoyo y mi héroe. Gracias por estar siempre a mi lado, por enseñarme valores y por llenar mi vida de amor y alegría.<br><br>
+      ¡Te quiero mucho!<br><br>
+      Con cariño,<br>
+      Tu hijo John Michael Mendoza Casanova
+    </p>
+    <button onclick="playMusic()">¡Reproducir Música!</button>
+  </div>
+
+  <script>
+let currentIndex = 0;
+    const images = document.querySelectorAll('.carousel img');
+
+    function showNextImage() {
+      images[currentIndex].classList.remove('active');
+      currentIndex = (currentIndex + 1) % images.length;
+      images[currentIndex].classList.add('active');
+    }
+
+    setInterval(showNextImage, 3000); // Cambia de imagen cada 3 segundos
+
+    function playMusic() {
+      const music = document.getElementById('music');
+      music.play();
+      alert('¡Disfruta la música y Feliz Día del Padre!');
+    }
+  </script>
+
+</body>
+</html>
